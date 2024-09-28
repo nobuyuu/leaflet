@@ -53,5 +53,24 @@ function onMapClick(e) {
         .openOn(map);
 }
 
-
 map.on('click', onMapClick);
+
+//　アイコンの作成
+let LeafIcon = L.Icon.extend({
+    options: {
+        iconUrl: 'leaf-green.png',
+        shadowUrl: 'images/leaf-shadow.png',
+        iconSize: [38, 95],  // アイコンのサイズ
+        shadowSize: [50, 64],  // 影の大きさ
+        iconAnchor: [22, 94],  // マーカーの位置に対応するアイコンのポイント
+        shadowAnchor: [4, 62],  // マーカーの位置に対応する影のポイント
+        popupAnchor: [-3, -76],  // iconAnchor を基準にしてポップアップが開くポイント
+    }
+
+});
+let greenIcon = new LeafIcon({iconUrl: 'images/leaf-green.png'}),
+    redIcon = new LeafIcon({iconUrl: 'images/leaf-red.png'}),
+    orangeIcon = new LeafIcon({iconUrl: 'images/leaf-orange.png'});
+
+L.marker([33.480821, 130.527019], {icon: greenIcon}).addTo(map);
+L.marker([33.48429, 130.538263], {icon: redIcon}).addTo(map);
