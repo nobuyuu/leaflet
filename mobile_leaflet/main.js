@@ -24,3 +24,5 @@ function onLocationError(e) {
 }
 
 map.on('locationerror', onLocationError);
+
+//テストテスト
